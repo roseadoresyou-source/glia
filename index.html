@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Celule gliale: astrocit, oligodendrocit, microglie</title>
+<style>
+:root{--bg:#ffffff;--surface:#f6f5f1;--text:#1f1e1c;--text2:#5f5e5a;--text3:#888780;--border:#d3d1c7;--accent-bg:#e1f5ee;--accent-bd:#0f6e56;--accent-tx:#085041;--radius:8px}
+@media (prefers-color-scheme:dark){:root{--bg:#191919;--surface:#252525;--text:#ececea;--text2:#b4b2a9;--text3:#888780;--border:#3d3d3a;--accent-bg:#04342c;--accent-bd:#5dcaa5;--accent-tx:#9fe1cb}}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:12px;max-width:760px;margin:0 auto}
+svg{display:block;width:100%;height:auto}
+svg text{font-family:inherit}
+.th{font-size:14px;font-weight:500;fill:var(--text)}
+.ts{font-size:12px;fill:var(--text2)}
+.leader{stroke:var(--text3);stroke-width:.5;stroke-dasharray:3 3}
+.c-amber{--f:#FAEEDA;--s:#854F0B;--a:#633806;--b:#854F0B}
+.c-purple{--f:#EEEDFE;--s:#534AB7;--a:#3C3489;--b:#534AB7}
+.c-gray{--f:#F1EFE8;--s:#5F5E5A;--a:#444441;--b:#5F5E5A}
+.c-teal{--f:#E1F5EE;--s:#0F6E56;--a:#085041;--b:#0F6E56}
+.c-coral{--f:#FAECE7;--s:#993C1D;--a:#712B13;--b:#993C1D}
+.c-red{--f:#FCEBEB;--s:#A32D2D;--a:#791F1F;--b:#A32D2D}
+@media (prefers-color-scheme:dark){
+.c-amber{--f:#633806;--s:#FAC775;--a:#FAEEDA;--b:#FAC775}
+.c-purple{--f:#3C3489;--s:#AFA9EC;--a:#EEEDFE;--b:#AFA9EC}
+.c-gray{--f:#444441;--s:#B4B2A9;--a:#F1EFE8;--b:#B4B2A9}
+.c-teal{--f:#085041;--s:#5DCAA5;--a:#E1F5EE;--b:#5DCAA5}
+.c-coral{--f:#712B13;--s:#F0997B;--a:#FAECE7;--b:#F0997B}
+.c-red{--f:#791F1F;--s:#F09595;--a:#FCEBEB;--b:#F09595}
+}
+[class^="c-"]>rect,rect[class^="c-"]{fill:var(--f);stroke:var(--s)}
+[class^="c-"] .th{fill:var(--a)}
+[class^="c-"] .ts{fill:var(--b)}
+.cell{cursor:pointer;transition:opacity .25s}
+.cell.dim{opacity:.2}
+.pill{font:inherit;font-size:13px;padding:6px 12px;border-radius:var(--radius);border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer}
+.pill:focus-visible{outline:2px solid var(--accent-bd);outline-offset:2px}
+.pill.on{background:var(--accent-bg);border-color:var(--accent-bd);color:var(--accent-tx)}
+#btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+#info{margin-top:12px;padding:14px 16px;background:var(--surface);border:1px solid var(--border);border-radius:12px}
+#info h3{margin:0 0 2px;font-size:16px;font-weight:500}
+#info p{margin:0 0 8px;font-size:14px;color:var(--text2);line-height:1.5}
+#info ul{margin:0;padding-left:18px;font-size:14px;line-height:1.6}
+</style>
+</head>
+<body>
+<svg viewBox="0 0 680 530" role="img" aria-label="Schemă interactivă a celulelor gliale">
+<title>Schemă interactivă a celulelor gliale</title>
+<g class="cell" data-k="epend">
+<text class="ts" x="50" y="22">Ventricul (lichid cefalorahidian)</text>
+<g stroke="#BA7517" stroke-width="1" stroke-linecap="round" fill="none">
+<line x1="65" y1="31" x2="65" y2="44"/><line x1="81" y1="31" x2="81" y2="44"/><line x1="115" y1="31" x2="115" y2="44"/><line x1="131" y1="31" x2="131" y2="44"/><line x1="165" y1="31" x2="165" y2="44"/><line x1="181" y1="31" x2="181" y2="44"/><line x1="215" y1="31" x2="215" y2="44"/><line x1="231" y1="31" x2="231" y2="44"/><line x1="265" y1="31" x2="265" y2="44"/><line x1="281" y1="31" x2="281" y2="44"/><line x1="315" y1="31" x2="315" y2="44"/><line x1="331" y1="31" x2="331" y2="44"/><line x1="365" y1="31" x2="365" y2="44"/><line x1="381" y1="31" x2="381" y2="44"/><line x1="415" y1="31" x2="415" y2="44"/><line x1="431" y1="31" x2="431" y2="44"/>
+</g>
+<g class="c-amber">
+<rect x="50" y="44" width="46" height="24" rx="4" stroke-width="0.8"/><rect x="100" y="44" width="46" height="24" rx="4" stroke-width="0.8"/><rect x="150" y="44" width="46" height="24" rx="4" stroke-width="0.8"/><rect x="200" y="44" width="46" height="24" rx="4" stroke-width="0.8"/><rect x="250" y="44" width="46" height="24" rx="4" stroke-width="0.8"/><rect x="300" y="44" width="46" height="24" rx="4" stroke-width="0.8"/><rect x="350" y="44" width="46" height="24" rx="4" stroke-width="0.8"/><rect x="400" y="44" width="46" height="24" rx="4" stroke-width="0.8"/>
+</g>
+<line class="leader" x1="448" y1="56" x2="468" y2="56"/>
+<g class="c-amber"><text class="th" x="474" y="52">Celulă ependimară</text><text class="ts" x="474" y="70">Tapetează ventriculii, cu cili</text></g>
+</g>
+<g class="cell" data-k="oligo">
+<g class="c-purple">
+<rect x="200" y="187" width="70" height="26" rx="10" stroke-width="0.8"/><rect x="285" y="187" width="60" height="26" rx="10" stroke-width="0.8"/><rect x="360" y="187" width="70" height="26" rx="10" stroke-width="0.8"/>
+</g>
+<g stroke="#7F77DD" stroke-width="0.8" opacity="0.7" fill="none">
+<line x1="212" y1="193" x2="258" y2="193"/><line x1="212" y1="207" x2="258" y2="207"/><line x1="296" y1="193" x2="334" y2="193"/><line x1="296" y1="207" x2="334" y2="207"/><line x1="372" y1="193" x2="418" y2="193"/><line x1="372" y1="207" x2="418" y2="207"/>
+</g>
+<g fill="none" stroke="#7F77DD" stroke-width="3" stroke-linecap="round">
+<path d="M310 130 Q270 150 235 186"/><path d="M320 134 Q318 160 315 186"/><path d="M332 130 Q370 150 395 186"/>
+</g>
+<circle cx="320" cy="118" r="17" fill="#7F77DD" stroke="#534AB7" stroke-width="1"/>
+<circle cx="320" cy="118" r="6" fill="#26215C"/>
+<line class="leader" x1="338" y1="112" x2="468" y2="112"/>
+<g class="c-purple"><text class="th" x="474" y="108">Oligodendrocit</text><text class="ts" x="474" y="126">Formează teaca de mielină</text></g>
+</g>
+<g class="cell" data-k="neuron">
+<g fill="none" stroke="#888780" stroke-width="3" stroke-linecap="round">
+<path d="M66 182 Q55 150 62 128"/><path d="M62 205 Q50 225 52 250"/><path d="M90 174 Q94 150 82 130"/>
+</g>
+<ellipse cx="90" cy="200" rx="32" ry="26" fill="#B4B2A9" stroke="#5F5E5A" stroke-width="1"/>
+<circle cx="90" cy="200" r="9" fill="#5F5E5A"/>
+<line x1="122" y1="200" x2="450" y2="200" stroke="#888780" stroke-width="4" stroke-linecap="round"/>
+<line class="leader" x1="452" y1="200" x2="468" y2="200"/>
+<g class="c-gray"><text class="th" x="474" y="196">Neuron (axon)</text><text class="ts" x="474" y="214">Nu e glie; axon mielinizat</text></g>
+</g>
+<g class="cell" data-k="astro">
+<g fill="none" stroke="#1D9E75" stroke-width="3" stroke-linecap="round">
+<path d="M308 310 Q290 270 277 218"/><path d="M322 310 Q345 270 353 218"/><path d="M303 336 Q280 400 268 462"/><path d="M327 336 Q350 400 362 462"/><path d="M296 325 Q260 322 230 300"/><path d="M334 325 Q370 322 400 305"/>
+</g>
+<g fill="none" stroke="#1D9E75" stroke-width="1.8" stroke-linecap="round">
+<path d="M262 318 Q250 345 235 352"/><path d="M368 320 Q385 345 402 352"/><path d="M285 262 Q268 262 258 252"/><path d="M346 262 Q362 262 372 252"/>
+</g>
+<ellipse cx="268" cy="466" rx="24" ry="6" fill="#1D9E75" stroke="#0F6E56" stroke-width="1"/>
+<ellipse cx="362" cy="466" rx="24" ry="6" fill="#1D9E75" stroke="#0F6E56" stroke-width="1"/>
+<ellipse cx="315" cy="325" rx="21" ry="17" fill="#1D9E75" stroke="#0F6E56" stroke-width="1"/>
+<circle cx="315" cy="325" r="7" fill="#04342C"/>
+<line class="leader" x1="404" y1="352" x2="468" y2="352"/>
+<g class="c-teal"><text class="th" x="474" y="346">Astrocit</text><text class="ts" x="474" y="364">Stelat; contactează noduri,</text><text class="ts" x="474" y="380">sinapse și capilare</text></g>
+</g>
+<g class="cell" data-k="micro">
+<g fill="none" stroke="#D85A30" stroke-width="1.5" stroke-linecap="round">
+<path d="M414 407 Q402 392 392 388"/><path d="M412 421 Q398 430 390 442"/><path d="M428 407 Q440 392 448 386"/><path d="M428 421 Q442 430 450 440"/><path d="M420 405 Q420 392 422 380"/><path d="M419 425 Q418 438 422 448"/>
+</g>
+<ellipse cx="420" cy="415" rx="8" ry="10" fill="#D85A30" stroke="#993C1D" stroke-width="1"/>
+<line class="leader" x1="431" y1="414" x2="468" y2="414"/>
+<g class="c-coral"><text class="th" x="474" y="418">Microglie</text><text class="ts" x="474" y="436">Celulă imună rezidentă</text></g>
+</g>
+<g class="cell" data-k="capil">
+<g class="c-red"><rect x="40" y="472" width="410" height="44" rx="22" stroke-width="0.8"/></g>
+<g fill="#E24B4A" opacity="0.75">
+<ellipse cx="100" cy="494" rx="14" ry="9"/><ellipse cx="190" cy="494" rx="14" ry="9"/><ellipse cx="300" cy="494" rx="14" ry="9"/><ellipse cx="400" cy="494" rx="14" ry="9"/>
+</g>
+<line class="leader" x1="452" y1="494" x2="468" y2="494"/>
+<g class="c-red"><text class="th" x="474" y="490">Capilar sanguin</text><text class="ts" x="474" y="508">Piciorușe astrocitare pe perete</text></g>
+</g>
+</svg>
+<div id="btns">
+<button class="pill" data-k="astro">Astrocit</button>
+<button class="pill" data-k="oligo">Oligodendrocit</button>
+<button class="pill" data-k="micro">Microglie</button>
+<button class="pill" data-k="epend">Celulă ependimară</button>
+<button class="pill" data-k="neuron">Neuron</button>
+<button class="pill" data-k="capil">Capilar</button>
+</div>
+<div id="info">
+<h3 id="t"></h3>
+<p id="s"></p>
+<ul id="l"></ul>
+</div>
+<script>
+var D={
+astro:{t:'Astrocit',s:'Cea mai numeroasă glie; markeri: GFAP, S100β',l:['Formă stelată, cu prelungiri spre sinapse, noduri Ranvier și vase','Piciorușele de pe capilar contribuie la bariera hemato-encefalică','Captează glutamatul și K⁺ din spațiul extracelular','Furnizează lactat neuronilor și modulează sinapsa','Formează cicatricea glială după leziune']},
+oligo:{t:'Oligodendrocit',s:'Glia mielinizantă din SNC; markeri: Olig2, MBP',l:['Corp rotund, puține prelungiri, fiecare spre un segment de mielină','O singură celulă mielinizează mai mulți axoni','Mielina accelerează conducerea saltatorie între noduri Ranvier','Suport metabolic pentru axon','Ținta atacului autoimun în scleroza multiplă']},
+micro:{t:'Microglie',s:'Macrofagul rezident al SNC; marker: Iba1',l:['Cea mai mică glie, cu prelungiri fine și ramificate','Nu provine din neuroectoderm, ci din sacul vitelin','Patrulează țesutul și elimină resturile prin fagocitoză','Elimină sinapsele în exces în dezvoltare','Își schimbă forma (amoeboidă) în inflamație']},
+epend:{t:'Celulă ependimară',s:'Glie epitelială care căptușește ventriculii',l:['Aspect cuboidal/columnar, cu cili la suprafață','Cilii ajută la circulația lichidului cefalorahidian','Formează o barieră permeabilă între LCR și parenchim','Celulele epiteliale ale plexului coroid produc LCR']},
+neuron:{t:'Neuron',s:'Nu este glie; prezent aici pentru context',l:['Corp celular, dendrite și un axon','Transmite semnale electrice și chimice','Axonul este mielinizat de oligodendrocit, cu noduri Ranvier la intervale','Depinde de glie pentru metabolism, izolare și protecție']},
+capil:{t:'Capilar sanguin',s:'Parte din unitatea neurovasculară',l:['Endoteliu cu joncțiuni strânse','Înconjurat de pericite și de piciorușele astrocitelor','Reglează trecerea substanțelor între sânge și creier','Astrocitele ajustează fluxul sanguin la activitatea neuronală']}
+};
+var cells=document.querySelectorAll('.cell'),btns=document.querySelectorAll('.pill[data-k]');
+function pick(k){
+cells.forEach(function(c){c.classList.toggle('dim',c.dataset.k!==k)});
+btns.forEach(function(b){b.classList.toggle('on',b.dataset.k===k)});
+var d=D[k];
+document.getElementById('t').textContent=d.t;
+document.getElementById('s').textContent=d.s;
+document.getElementById('l').innerHTML=d.l.map(function(x){return '<li>'+x+'</li>'}).join('');
+}
+cells.forEach(function(c){c.addEventListener('click',function(){pick(c.dataset.k)})});
+btns.forEach(function(b){b.addEventListener('click',function(){pick(b.dataset.k)})});
+pick('astro');
+</script>
+</body>
+</html>
